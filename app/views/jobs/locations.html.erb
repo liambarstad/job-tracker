@@ -1,0 +1,15 @@
+<h1>Jobs By Location:</h1>
+<h3><%= link_to "Create New Job", new_job_path %></h3>
+<ul>
+  <% @locations.each do |location| %>
+    <li><%= location %>
+      <ul>
+        <% @jobs[location].each do |job| %>
+          <li><%= link_to job.title, company_job_path(job.company, job) %>,
+            Level of interest: <%= job.level_of_interest %>, Company: <%= link_to job.company.name, company_path(job.company) %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>

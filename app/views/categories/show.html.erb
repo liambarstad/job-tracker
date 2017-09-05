@@ -1,0 +1,12 @@
+<h1><%= @category.title %></h1>
+
+<h2>Jobs:</h2>
+<ul>
+  <%= @category.jobs.each do |job| %>
+    <li>
+      <a><%= link_to job.title, company_job_path(job.company, job) %></a>
+      <a>Level of interest: <%= job.level_of_interest %></a>
+      <a>City: <%= job.city %></a>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,7 @@
+<% @comments.each do |comment| %>
+<div>
+  <a>Title: <%= comment.title %></a>
+  <a>Body: <%= comment.content %></a>
+  <a>Created at: <%= comment.created_at %></a>
+</div>
+<% end %>

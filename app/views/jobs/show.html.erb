@@ -11,3 +11,12 @@ City: <%= @job.city %>
 <br>
 
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
+
+<%= link_to "Edit", edit_company_job_path(@job.company, @job) %>
+<%= link_to "Delete", company_job_path(@job.company, @job), method: :delete %>
+
+<h2>Comments:</h2>
+
+<%= render template: "comments/new" %>
+
+<%= render template: "comments/index" %>

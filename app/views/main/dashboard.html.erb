@@ -1,0 +1,33 @@
+<h1>Main Dashboard</h1>
+<h3><%= link_to "See All Companies", companies_path %></h3>
+<h3><%= link_to "See All Jobs By Location", jobs_path(:sort => "location") %></h3>
+<h2>Companies With Highest Average Level of Interest:</h2>
+
+<ul>
+  <% @highest_companies.each do |company| %>
+    <li class="highestjobs"><%= link_to company.name, company_path(company) %>: <%= company.average_job_interest %></li>
+  <% end %>
+</ul>
+
+
+<h2>Jobs By Level of Interest:</h2>
+<h4><%= link_to "Full List", jobs_path(:sort => "interest") %></h4>
+<ul>
+  <li>Jobs with level of interest 1: <a class="jobswith"><%= @level_of_interest_jobs[0].count %></a></li>
+  <li>Jobs with level of interest 2: <a class="jobswith"><%= @level_of_interest_jobs[1].count %></a></li>
+  <li>Jobs with level of interest 3: <a class="jobswith"><%= @level_of_interest_jobs[2].count %></a></li>
+  <li>Jobs with level of interest 4: <a class="jobswith"><%= @level_of_interest_jobs[3].count %></a></li>
+  <li>Jobs with level of interest 5: <a class="jobswith"><%= @level_of_interest_jobs[4].count %></a></li>
+  <li>Jobs with level of interest 6: <a class="jobswith"><%= @level_of_interest_jobs[5].count %></a></li>
+  <li>Jobs with level of interest 7: <a class="jobswith"><%= @level_of_interest_jobs[6].count %></a></li>
+  <li>Jobs with level of interest 8: <a class="jobswith"><%= @level_of_interest_jobs[7].count %></a></li>
+  <li>Jobs with level of interest 9: <a class="jobswith"><%= @level_of_interest_jobs[8].count %></a></li>
+  <li>Jobs with level of interest 10: <a class="jobswith"><%= @level_of_interest_jobs[9].count %></a></li>
+</ul>
+
+<h2>Jobs by location:</h2>
+<ul>
+  <% @locations.each do |location| %>
+    <li class="location"><%= link_to location, jobs_path(:location => location) %></li>
+  <% end %>
+</ul>

@@ -1,5 +1,15 @@
 All Jobs for <strong><%= @company.name %></strong>
 
+<h3>Contacts:</h3>
+
+<%= render template: "contacts/new" %>
+
+<%= render template: "contacts/index" %>
+
 <% @jobs.each do |job| %>
-  <ul><%= job.title %> at <%= job.company.name %></ul>
+<ul>
+  <%= job.title %> at <%= job.company.name %>
+  <%= link_to "Edit", edit_company_job_path(@company, job) %>
+  <%= link_to "Delete", company_job_path(@company, job), method: :delete %>
+</ul>
 <% end %>
